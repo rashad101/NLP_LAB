@@ -9,6 +9,24 @@ All the data generated in different steps can be found and downloaded from the f
 
 
 ### Pre-processing
+
+```
+train-v1.1.json
+├── "data"
+   └── [i]
+       ├── "paragraphs"
+           └── [j]
+               ├── "context": "paragraph text"
+               └── "qas"
+                   └── [k]
+                       ├── "answers"
+                       │   └── [l]
+                       │       ├── "answer_start": N
+                       │       └── "text": "answer"
+                       ├── "id": "question id"
+                       └── "question": "paragraph question"
+```
+
 ### Train
 
 ## Performance
