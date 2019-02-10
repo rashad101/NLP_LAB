@@ -3,7 +3,7 @@ Implementation of Relation Detector that detects correct relation from a set of 
 
 
 
-## Pre-process
+## Pre-processing
 
 
 ## Train
