@@ -43,7 +43,7 @@ For training the program run the following command, here 60 is number of ephos a
 ```
 python train.py 60 256
 ```
-Running this program randomly divide the data into train and test set into a ratio of 80/20
+Running this program randomly divide the data into train and test set to a ratio of 80/20
 
 ## Performance
 ![alt text](https://github.com/rashad101/NLP_LAB/blob/master/img/acc.jpg)
