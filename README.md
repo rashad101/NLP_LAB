@@ -16,15 +16,15 @@ train-v1.1.json
    └── [i]
        ├── "paragraphs"
            └── [j]
-               ├── "context": "paragraph text"
+               ├── "context": "list of space separated candidate relations"
                └── "qas"
                    └── [k]
                        ├── "answers"
                        │   └── [l]
                        │       ├── "answer_start": N
-                       │       └── "text": "answer"
+                       │       └── "text": "correct relation"
                        ├── "id": "question id"
-                       └── "question": "paragraph question"
+                       └── "question": "question"
 ```
 
 ### Train
