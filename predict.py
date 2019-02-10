@@ -6,7 +6,7 @@ def main():
     model = RD()
     model.load_glove_model('./embedding')
     model.load_model(model_dir_path='./models')
-    data_set = LCQUaDDataSet(data_path='data/LCQuAD/train-v1.1.json')
+    data_set = LCQUaDDataSet(data_path='data/LCQuAD/dev-v1.1.json')
     for i in range(5):
         paragraph, question, actual_answer = data_set.get_data(i)
         predicted_answer = model.reply(paragraph, question)
