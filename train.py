@@ -15,14 +15,14 @@ def main():
     model = RD()
     model.load_glove_model('./embedding')
 
-
+    # train/test split ratio [split_ratio denoting the test part]
+    split_ratio = 0.2
     epochs = int(sys.argv[1])
     batch_size = int(sys.argv[2])
     print("Training Program:")
-    print("Epochs = ", epochs, " , Batch size = ",batch_size)
+    print("Epochs: ", epochs, " , Batch size: ",batch_size, " Train/Test: 80/20")
 
-    # train/test split ratio [split_ratio denoting the test part]
-    split_ratio = 0.2
+
 
     history = model.fit(data_set, model_dir_path=output_dir_path,
                      batch_size=batch_size, test_size = split_ratio, epochs=epochs,
