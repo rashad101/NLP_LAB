@@ -5,9 +5,13 @@ Implementation of Relation Detector that detects correct relation from a set of 
 ## Data
 All the data generated in different steps can be found and downloaded from the following link:
 [Download Link](https://www.dropbox.com/sh/wj8iojvn493d233/AAA0tA1qrOv2r9K3B8GKqeWoa?dl=0)
-## RUN
-
-
+## Install
+For installing the program first clone the github repository by running the following repository
+```
+git clone https://github.com/rashad101/NLP_LAB.git
+cd NLP_LAB
+```
+Now download 
 ### Pre-processing
 
 ```
