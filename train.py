@@ -21,8 +21,11 @@ def main():
     print("Training Program:")
     print("Epochs = ", epochs, " , Batch size = ",batch_size)
 
+    # train/test split ratio [split_ratio denoting the test part]
+    split_ratio = 0.2
+
     history = model.fit(data_set, model_dir_path=output_dir_path,
-                     batch_size=batch_size, epochs=epochs,
+                     batch_size=batch_size, test_size = split_ratio, epochs=epochs,
                      random_state=random_state)
 
     plot_and_save_history(history,"seq2seq_model","./models")
