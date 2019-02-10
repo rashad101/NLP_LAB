@@ -11,7 +11,10 @@ For installing the program first clone the github repository by running the foll
 git clone https://github.com/rashad101/NLP_LAB.git
 cd NLP_LAB
 ```
-Now download 
+Now install the requirements by running the following command:
+```
+pip install -r requirements
+```
 ### Pre-processing
 
 ```
