@@ -13,7 +13,7 @@ All the data generated in different steps can be found and downloaded from the f
 ```
 python utils/preprocess.py
 ```
-After pre-processing the data two file will be generated inside 'data/LCQuAD' directory: train-v1.1.json, dev-v1.1.json
+After pre-processing the data two file will be generated inside 'data/LCQuAD' directory: [train-v1.1.json](https://github.com/rashad101/NLP_LAB/blob/master/data/LCQuAD/train-v1.1.json), [dev-v1.1.json](https://github.com/rashad101/NLP_LAB/blob/master/data/LCQuAD/dev-v1.1.json)
 ```
 train-v1.1.json
 ├── "data"
