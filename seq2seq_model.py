@@ -6,6 +6,7 @@ from keras.models import Model
 from keras.preprocessing.sequence import pad_sequences
 from utils.glove_model import GloveModel
 from utils.embed_data_utils import LCQuADSeq2SeqEmbTripleSamples
+from keras import backend as K
 import os
 
 
@@ -24,6 +25,25 @@ def in_white_list(_word):
         return False
 
     return True
+
+
+def f1(y_true, y_pred):
+    def recall(y_true, y_pred):
+
+        true_positives = K.sum(K.round(K.clip(y_true * y_pred, 0, 1)))
+        possible_positives = K.sum(K.round(K.clip(y_true, 0, 1)))
+        recall = true_positives / (possible_positives + K.epsilon())
+        return recall
+
+    def precision(y_true, y_pred):
+
+        true_positives = K.sum(K.round(K.clip(y_true * y_pred, 0, 1)))
+        predicted_positives = K.sum(K.round(K.clip(y_pred, 0, 1)))
+        precision = true_positives / (predicted_positives + K.epsilon())
+        return precision
+    precision = precision(y_true, y_pred)
+    recall = recall(y_true, y_pred)
+    return 2*((precision*recall)/(precision+recall+K.epsilon()))
 
 
 def generate_batch(ds, input_word2em_data, output_data, batch_size):
@@ -120,7 +140,7 @@ class RD(object):
 
         self.model = Model([context_inputs, question_inputs, decoder_inputs], decoder_outputs)
 
-        self.model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+        self.model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy',f1])
 
         self.encoder_model = Model([context_inputs, question_inputs], encoder_states)
 
