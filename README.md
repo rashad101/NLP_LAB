@@ -11,6 +11,10 @@ All the data generated in different steps can be found and downloaded from the f
 ### Pre-processing
 
 ```
+python utils/preprocess.py
+```
+After pre-processing the data two file will be generated inside 'data/LCQuAD' directory: train-v1.1.json, dev-v1.1.json
+```
 train-v1.1.json
 ├── "data"
    └── [i]
@@ -32,6 +36,7 @@ For training the program run the following command, here 60 is number of ephos a
 ```
 python train.py 60 256
 ```
+Running this program randomly divide the data into train and test set into a ratio of 80/20
 
 ## Performance
 ![alt text](https://github.com/rashad101/NLP_LAB/blob/master/img/acc.jpg)
