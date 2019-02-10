@@ -17,8 +17,6 @@ def main():
             print(count, " done")
         if pa==a:
             ok+=1
-        if pa!=a:
-            print("pa-> ",pa," --------------  a->",a)
         count+=1
 
 
