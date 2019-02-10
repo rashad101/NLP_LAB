@@ -21,7 +21,6 @@ def main():
     print("Training Program:")
     print("Epochs = ", epochs, " , Batch size = ",batch_size)
 
-
     history = model.fit(data_set, model_dir_path=output_dir_path,
                      batch_size=batch_size, epochs=epochs,
                      random_state=random_state)
