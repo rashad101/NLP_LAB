@@ -16,7 +16,7 @@ Now install the requirements by running the following command:
 pip install -r requirements
 ```
 ### Pre-processing
-
+Athough all the required data are already there inside the project directory but if anyone want to use their own data (data must follow train-v1.1.json file structure shown below) they can do so by running the following command:
 ```
 python utils/preprocess.py
 ```
