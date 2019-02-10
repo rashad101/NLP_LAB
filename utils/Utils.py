@@ -14,7 +14,7 @@ from SPARQLWrapper import SPARQLWrapper, JSON
 
 #returns a list of triple-list
 def load_data():
-    with open('../data/FullyAnnotated_LCQuAD_new.json') as f:
+    with open('../data/LCQuAD/FullyAnnotated_LCQuAD_new.json') as f:
         data = json.load(f)
         triple_list = []
         for i in range(len(data)):
@@ -36,7 +36,7 @@ def load_data():
 
 
 def count_ontology_classes():
-    with open('../data/FullyAnnotated_LCQuAD_new.json') as f:
+    with open('../data/LCQuAD/FullyAnnotated_LCQuAD_new.json') as f:
         data = json.load(f)
         no_defined_class = []
         classes = []
@@ -70,9 +70,9 @@ def count_ontology_classes():
 def write_dbpedia_relations():
     all_relations_with_label = {}
     uri_relations = []
-    write_to_file = open("../data/all_DBpedia_relations.txt", "w+")
+    write_to_file = open("../data/LCQuAD/all_DBpedia_relations.txt", "w+")
 
-    with open('../data/dbontologyindex1.json') as f:
+    with open('../data/LCQuAD/dbontologyindex1.json') as f:
         for line in f:
             ln = line.strip()
             if "mergedLabel" in ln:
@@ -89,7 +89,7 @@ def write_dbpedia_relations():
                     all_relations_with_label[uri_rel].append(label)
 
     #print(len(all_relations_with_label))
-    with open('../data/all_relations_with_label.json', 'w') as outfile:
+    with open('../data/LCQuAD/all_relations_with_label.json', 'w') as outfile:
         json.dump([all_relations_with_label], outfile)
     write_to_file.close()
 
@@ -101,7 +101,7 @@ def find_similar_relations_using_thesaurus(word):
 
 # Returns a dictionary where key: value == relation: list_of_labels
 def load_DBpedia_relations():
-    with open('../data/all_relations_with_label.json') as f:
+    with open('../data/LCQuAD/all_relations_with_label.json') as f:
         relations = json.load(f)
         relations = relations[0]
         print(len(relations))
@@ -172,7 +172,7 @@ def build_data():
             percent = (j/total)*100.0
             print("done %.2f%%"%percent)
 
-    with open('../data/ER_n_relList_v3.json', 'w') as outfile:
+    with open('../data/LCQuAD/ER_n_relList_v3.json', 'w') as outfile:
         json.dump([er_n_list], outfile, indent=4)
 
 
@@ -209,7 +209,7 @@ def build_lcquad_test():
 
     e=0
     r=0
-    with open('../data/FullyAnnotated_LCQuAD5000.json') as f:
+    with open('../data/LCQuAD/FullyAnnotated_LCQuAD5000.json') as f:
         data = json.load(f)
         for d in data:
             e_mapping = d["entity mapping"]
@@ -229,7 +229,7 @@ def build_lcquad_test():
     for k,v in all_er.items():
         rows.append([k,v])
 
-    to_write = open("../data/Test_LC_QuAD.csv","w")
+    to_write = open("../data/LCQuAD/Test_LC_QuAD.csv","w")
     data_writer = csv.writer(to_write)
     data_writer.writerows(rows)
 

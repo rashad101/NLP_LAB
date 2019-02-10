@@ -1,26 +1,24 @@
-# Relation Detector
-Implementation of Relation Detector that detects correct relation from a set of relations, for a given question 
+# Relation Linker
+Implementation of Relation Linker that detects correct relation from a set of relations, for a given question 
 
 
 ## Data
 All the data generated in different steps can be found and downloaded from the following link:
 [Download Link](https://www.dropbox.com/sh/wj8iojvn493d233/AAA0tA1qrOv2r9K3B8GKqeWoa?dl=0)
+
 ## Install
 For installing the program first clone the github repository by running the following repository
 ```
 git clone https://github.com/rashad101/NLP_LAB.git
 cd NLP_LAB
 ```
-Now install the requirements by running the following command:
-```
-pip install -r requirements
-```
+All the requried datasets are already there for running the program.
 ### Pre-processing
-Athough all the required data are already there inside the project directory but if anyone want to use their own data (data must follow train-v1.1.json file structure shown below) they can do so by running the following command:
+
 ```
 python utils/preprocess.py
 ```
-After pre-processing the data two file will be generated inside 'data/LCQuAD' directory: [train-v1.1.json](https://github.com/rashad101/NLP_LAB/blob/master/data/LCQuAD/train-v1.1.json), [dev-v1.1.json](https://github.com/rashad101/NLP_LAB/blob/master/data/LCQuAD/dev-v1.1.json). Both the file have same structure.
+After pre-processing the data two file will be generated inside 'data/LCQuAD' directory: [train-v1.1.json](https://github.com/rashad101/NLP_LAB/blob/master/data/LCQuAD/train-v1.1.json), [dev-v1.1.json](https://github.com/rashad101/NLP_LAB/blob/master/data/LCQuAD/dev-v1.1.json)
 ```
 train-v1.1.json
 ├── "data"
