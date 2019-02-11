@@ -1,5 +1,5 @@
 # Relation Linker
-Implementation of Relation Linker that detects correct relation from a set of relations, for a given question 
+Implementation of Relation Linker that detects correct relation from a set of relations, for a given question. 
 
 
 ## Data
