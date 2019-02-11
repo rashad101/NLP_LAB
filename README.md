@@ -37,7 +37,7 @@ train-v1.1.json
 ```
 
 ### Train
-For training the program run the following command, here 60 is number of ephos and 256 is the batch size
+For training the program run the following command, here 60 is the number of ephos and 256 is the batch size
 ```
 python train.py 60 256
 ```
